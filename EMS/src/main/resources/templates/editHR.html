@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit HR</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+    <h1>Edit HR Entry</h1>
+    <form action="@{/updateHR(id=${hr.id})}" method="post">
+        <!-- Hidden input field for ID if needed -->
+        <input type="hidden" name="id" value="${hr.id}">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="${hr.name}" required>
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" value="${hr.department}" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="${hr.email}" required>
+
+        <button type="submit">Update HR</button>
+    </form>
+    <a href="/hr">Back to HR List</a>
+</body>
+</html>
